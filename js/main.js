@@ -58,7 +58,8 @@ const getUserQuestion = () => {
     else if (inputMemory.includes(userInput) === false && userInput.includes('will')) {
         inputMemory.push(userInput);
         spinBall().then((result) => {
-            returnAnswer()
+            returnAnswer();
+            showTable();
         })
         //returnAnswer()
     }
@@ -76,3 +77,46 @@ const getUserQuestion = () => {
     }
 }
 
+const showTable = () => {
+    const userQuestion = document.getElementById('user-question');
+    const userAnswer = document.getElementById('ball-answer');
+    const userInput = document.getElementById("message").value.toLowerCase()
+    const userInputIndex = inputMemory.findIndex(element => element === userInput)
+    const answerMemoryIndex = answerMemory[userInputIndex];
+    userQuestion.innerHTML = userInput; 
+    userAnswer.innerHTML = answerMemoryIndex;
+}
+// creates a new table row with associated td elements to be appended to index.html table
+const createTableRow = () => {
+    const tr = document.createElement('tr'); //create table row html element
+    tr.classList.add('table-row-data'); //add class of table-row-data to table row
+    // td.setAttribute('id', 'ball-answer');
+    const table = document.getElementById('table');
+    const row = table.insertRow(-1);
+    row.classList.add('table-row-data')
+    //table.appendChild(tr);
+}
+createTableRow()
+
+const createUserTd = () => {
+    const td = document.createElement('td');
+    td.classList.add('table-data');
+    td.setAttribute('id', 'user-question');
+    const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
+    const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
+    td.innerHTML = 'TEST';
+    latestTableRow.appendChild(td);
+}
+createUserTd();
+    
+const createQuestionTd = () => {
+    const row = document.getElementsByClassName
+    const td = document.createElement('td');
+    td.classList.add('table-data');
+    td.setAttribute('id', 'ball-answer');
+    const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
+    const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
+    td.innerHTML = 'TEST Question';
+    latestTableRow.appendChild(td);
+}
+createQuestionTd()

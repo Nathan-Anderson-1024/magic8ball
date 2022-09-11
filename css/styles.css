@@ -78,3 +78,14 @@ main {
     justify-content: center;
     align-items: center;
 }
+/* Table styling */
+.results-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.table-row-heading {
+    font-size: 2rem;
+    color: white;
+}
