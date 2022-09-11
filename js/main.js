@@ -6,7 +6,7 @@ const stopReload = (event) => {
 noSubmitForm.addEventListener('submit', stopReload);
 
 
-//arrat for remembering the user questions
+//array for remembering the user questions
 const inputMemory = [];
 //array for remembering the 8ball answers
 const answerMemory = [];
@@ -34,11 +34,11 @@ const getUserQuestion = () => {
         answerMemory.push(answerArray[randomNum]);
         return alert(answerArray[randomNum]);
     };
-    if (userInput === '' || userInput.length < 5) {
-        return alert('Please ask a question.')
+    if (userInput === '' || userInput.length < 5 || !userInput.includes('Will') || !userInput.includes('will')) {
+        return alert('Please ask a valid question.')
     }
     //if question hasnt been asked then return an answer and push the question into memory.
-    if (inputMemory.includes(userInput) === false) {
+    if (inputMemory.includes(userInput) === false && userInput.includes('Will') || userInput.includes('Will')) {
         inputMemory.push(userInput);
         returnAnswer()
     }
