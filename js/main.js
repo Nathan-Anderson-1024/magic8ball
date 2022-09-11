@@ -34,13 +34,16 @@ const getUserQuestion = () => {
         answerMemory.push(answerArray[randomNum]);
         return alert(answerArray[randomNum]);
     };
-    if (userInput === '' || userInput.length < 5 || !userInput.includes('Will') || !userInput.includes('will')) {
+    if (userInput === '' || userInput.length < 5) {
         return alert('Please ask a valid question.')
     }
     //if question hasnt been asked then return an answer and push the question into memory.
-    if (inputMemory.includes(userInput) === false && userInput.includes('Will') || userInput.includes('Will')) {
+    else if (inputMemory.includes(userInput) === false && userInput.includes('Will') || userInput.includes('will')) {
         inputMemory.push(userInput);
         returnAnswer()
+    }
+    else if (!userInput.includes('will') || !userInput.includes('Will')) {
+        return alert("I can't answer those types of questions.")
     }
     // if question has been asked then return the question and the answer that was given at the time.
     else {
