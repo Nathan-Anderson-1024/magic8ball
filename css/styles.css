@@ -56,3 +56,25 @@ main {
 #message-label {
     text-shadow: 0 0 8px #fff;
 }
+
+/* options container */
+.options-container {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+#options-text {
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
