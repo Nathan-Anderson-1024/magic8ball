@@ -76,7 +76,7 @@ const getUserQuestion = () => {
         return alert(`You already asked me '${userInput}', my answer is still '${answerMemoryIndex}'.`)
     }
 }
-
+//appends question and answer to table
 const showTable = () => {
     const userQuestion = document.getElementById('user-question');
     const userAnswer = document.getElementById('ball-answer');
