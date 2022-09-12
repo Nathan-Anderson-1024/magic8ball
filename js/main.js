@@ -10,13 +10,16 @@ const answerArray = [
     'No chance.',
     'My sources say yes!',
     'Without a doubt yes!',
-    'hazy, try again',
-    "you dont want to know the answer",
-    'concentrate and ask again'
+    'hazy, but I say it will happen',
+    "you will",
+    'concentrate and ask again',
+    'no way'
 ];
 
-// Stops reload of the page after submitting
+let randomNum; //defines global variable randomNum
+
 const noSubmitForm = document.getElementById("form");
+// Stops reload of the page after submitting
 const stopReload = (event) => {
     return event.preventDefault();
 }
@@ -28,33 +31,38 @@ const sleep = (milliseconds) => {
 }
 
 
+const randomNumberGenerator = () => {
+    randomNum = Math.floor(Math.random() * answerArray.length);
+    return randomNum;
+}
+
+const returnAnswer = () => {
+    answerMemory.push(answerArray[randomNum]);
+    return alert(answerArray[randomNum]);
+};
+
+async function spinBall() {
+    const insideBall = document.getElementById('options-text');
+    let x = 1;
+    for (const answer of answerArray) {
+        await sleep(x);
+        insideBall.innerHTML = answer;
+        x += 25;
+    }
+    insideBall.innerHTML = answerArray[randomNum];
+}
 
 // Capture user question and check if its already been asked before.
 const getUserQuestion = () => {
     const userInput = document.getElementById("message").value.toLowerCase(); //captures user question
-    const randomNum = Math.floor(Math.random() * answerArray.length); //picks random number
-    //returnAnswer pushed 8ball response to array and returns an alert to the user of the answer
-    const returnAnswer = () => {
-        answerMemory.push(answerArray[randomNum]);
-        return alert(answerArray[randomNum]);
-    };
-    async function spinBall() {
-        const insideBall = document.getElementById('options-text');
-        let x = 1
-        for (const answer of answerArray) {
-            await sleep(x);
-            insideBall.innerHTML = answer;
-            x += 25;
-        }
-        insideBall.innerHTML = answerArray[randomNum];
-    }
     if (userInput === '' || userInput.length < 5) {
         return alert('Please ask a valid question.')
     }
     //if question hasnt been asked then return an answer and push the question into memory.
     else if (inputMemory.includes(userInput) === false && userInput.includes('will')) {
         inputMemory.push(userInput);
-        spinBall().then((result) => {
+        randomNumberGenerator();
+        spinBall().then(() => {
             returnAnswer();
             moveTable();
             
@@ -62,7 +70,7 @@ const getUserQuestion = () => {
     }
     else if (!userInput.includes('will')) {
         console.log(userInput)
-        return alert("I can't answer those types of questions.")
+        return alert("Please start your question with 'Will'.")
     }
     // if question has been asked then return the question and the answer that was given at the time.
     else {
