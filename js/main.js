@@ -60,6 +60,8 @@ const getUserQuestion = () => {
         spinBall().then((result) => {
             returnAnswer();
             showTable();
+            moveTable();
+            
         })
         //returnAnswer()
     }
@@ -76,10 +78,12 @@ const getUserQuestion = () => {
         return alert(`You already asked me '${userInput}', my answer is still '${answerMemoryIndex}'.`)
     }
 }
-//appends question and answer to table
+//appends question and answer to table to the top row
 const showTable = () => {
-    const userQuestion = document.getElementById('user-question');
-    const userAnswer = document.getElementById('ball-answer');
+    const userQuestion = document.getElementsByClassName('table-data-question')[0]
+    const userAnswer = document.getElementsByClassName('table-data-response')[0]
+    //const userQuestion = testQuestion[0];
+    //const userAnswer = testResponse[0];
     const userInput = document.getElementById("message").value.toLowerCase()
     const userInputIndex = inputMemory.findIndex(element => element === userInput)
     const answerMemoryIndex = answerMemory[userInputIndex];
@@ -96,27 +100,36 @@ const createTableRow = () => {
     row.classList.add('table-row-data')
     //table.appendChild(tr);
 }
-createTableRow()
 
-const createUserTd = () => {
+
+const createUserTd = (data) => {
     const td = document.createElement('td');
-    td.classList.add('table-data');
-    td.setAttribute('id', 'user-question');
+    td.classList.add('table-data','table-data-response');
+    //td.setAttribute('id', 'user-question');
     const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
     const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
-    td.innerHTML = 'TEST';
+    td.innerHTML = data;
     latestTableRow.appendChild(td);
 }
-createUserTd();
+
     
-const createQuestionTd = () => {
-    const row = document.getElementsByClassName
+const createQuestionTd = (data) => {
     const td = document.createElement('td');
-    td.classList.add('table-data');
-    td.setAttribute('id', 'ball-answer');
+    td.classList.add('table-data', 'table-data-question');
     const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
     const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
-    td.innerHTML = 'TEST Question';
+    td.innerHTML = data;
     latestTableRow.appendChild(td);
 }
-createQuestionTd()
+
+let previousValue = 0
+const moveTable = () => {
+    if (answerMemory.length >= 2 && inputMemory.length >= 2) {
+        const previousQuestion = inputMemory[previousValue];
+        const previousAnswer = answerMemory[previousValue];
+        createTableRow();
+        createUserTd(previousQuestion);
+        createQuestionTd(previousAnswer);
+        previousValue += 1;
+    }
+}
