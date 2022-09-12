@@ -10,7 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 /* header  */
 header {
@@ -22,13 +22,14 @@ header {
     font-size: 2rem;
     padding: 0;
     text-shadow: 0 0 8px #fff;
-    width: 100vw;
     text-align: center;
 }
 .title-description {
     margin-top: 0;
-    font-size: 1.25rem;
     text-shadow: 0 0 10px #fff;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    font-size: 1.5rem;
 }
 /* main */
 main {
@@ -41,32 +42,53 @@ main {
 #form {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 #message {
-    width: 50vw;
     border: 2px solid black;
     border-radius: 0.5rem;
+    width: 80vw;
+    height: 5vh;
+    
 }
 #submit-button {
-    border: 2px solid green;
+    border: 2px solid blue;
     margin-top: 0.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    height: 5vh;
+    width: 60vw;
+    align-self: center;
+    margin-top: 1rem;
+}
+#submit-button:hover {
+    background-color: blue;
+}
+#submit-button:active {
+    background-color: rgb(64, 0, 255);
 }
 #message-label {
     text-shadow: 0 0 8px #fff;
+    text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: 60vw;
+    align-self: center;
 }
-
 /* options container */
 .options-container {
     margin-top: 2rem;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background-color: black;
-    height: 300px;
-    width: 300px;
+    height: 18.75rem;
+    width: 18.75rem; 
     border-radius: 50%;
 }
 #options-text {
@@ -77,8 +99,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 /* Table styling */
+table, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
 .results-table-container {
     display: flex;
     justify-content: center;
@@ -88,4 +115,149 @@ main {
 .table-row-heading {
     font-size: 2rem;
     color: white;
+}
+.table-heading {
+    font-weight: bold;
+}
+.results-table-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.table-row-data {
+    color: white;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+    body {
+        padding-bottom: 5rem;
+    }
+    /* 8Ball styling */
+    .options-container {
+        height: 200px;
+        width: 200px;
+    }
+    #options-text {
+        height: 100px;
+        width: 100px;
+    }
+    /* Table styling */
+    table, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+    }
+    table {
+        width: 80vw;
+    }
+    .table-heading {
+        font-weight: bold;
+    }
+    .results-table-container {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .table-row-data {
+        color: white;
+    }
+
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding-bottom: 5rem;
+    }
+    /* form styling */
+    #form {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .title-description {
+        width: 100vw;
+        background-color: rgba(255,255,255,0.8);
+        font-size: 1.5rem;
+    }
+    .options-container {
+        margin-bottom: 2rem;
+    }
+    #options-text {
+        font-size: 1.5rem;
+    }
+    /* table styling */
+    .results-table-container {
+        margin-bottom: 2rem;
+    }
+    table {
+        width: 80vw;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    
+    /* table styling */
+    table {
+        width: 80vw;
+    }
+    .table-data {
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    
+    /* table styling */
+    table {
+        width: 80vw;
+    }
+    .table-data {
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (min-width: 1441px) {
+    .title {
+        font-size: 3rem;
+    }
+    .title-description {
+        font-size: 2rem;
+    }
+    /* form styling */
+    #form {
+        margin-top: 6rem;
+    }
+    #message {
+        font-size: 2rem;
+    }
+    #submit-button {
+        font-size: 2rem;
+        border-radius: 1rem;
+    }
+
+    /* 8Ball styling */
+    /* options container */
+    .options-container {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: black;
+        height: 500px; /*300px*/
+        width: 500px; /*300px*/
+        border-radius: 50%;
+    }
+    #options-text {
+        background-color: white;
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 2rem;
+    }
+    /* table styling */
+    table {
+        width: 80vw;
+    }
+    .table-data {
+        font-size: 1.5rem;
+    }
 }
