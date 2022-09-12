@@ -22,14 +22,12 @@ header {
     font-size: 2rem;
     padding: 0;
     text-shadow: 0 0 8px #fff;
-    width: 100vw;
     text-align: center;
 }
 .title-description {
     margin-top: 0;
     text-shadow: 0 0 10px #fff;
     text-align: center;
-    width: 100vw;
     background-color: rgba(255,255,255,0.8);
     font-size: 1.5rem;
 }
@@ -48,15 +46,21 @@ main {
     margin-bottom: 2rem;
 }
 #message {
-    width: 50vw;
     border: 2px solid black;
     border-radius: 0.5rem;
+    width: 80vw;
+    height: 5vh;
+    
 }
 #submit-button {
     border: 2px solid blue;
     margin-top: 0.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    height: 5vh;
+    width: 60vw;
+    align-self: center;
+    margin-top: 1rem;
 }
 #submit-button:hover {
     background-color: blue;
@@ -67,8 +71,13 @@ main {
 #message-label {
     text-shadow: 0 0 8px #fff;
     text-align: center;
+    background-color: rgba(255,255,255,0.8);
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: 60vw;
+    align-self: center;
 }
-
 /* options container */
 .options-container {
     margin-top: 2rem;
@@ -78,8 +87,8 @@ main {
     justify-content: center;
     flex-direction: column;
     background-color: black;
-    height: 18.75rem; /*300px*/
-    width: 18.75rem; /*300px*/
+    height: 18.75rem;
+    width: 18.75rem; 
     border-radius: 50%;
 }
 #options-text {
@@ -120,26 +129,8 @@ table, td {
 }
 
 @media only screen and (min-width: 300px) and (max-width: 480px) {
-    
-    
-    
-    #message-label {
-        background-color: rgba(255,255,255,0.8);
-        margin-bottom: 1rem;
-        border-radius: 1rem;
-        font-size: 2rem;
-        width: 60vw;
-        align-self: center;
-    }
-    #message {
-        width: 80vw;
-        height: 5vh;
-    }
-    #submit-button {
-        height: 5vh;
-        width: 60vw;
-        align-self: center;
-        margin-top: 1rem;
+    body {
+        padding-bottom: 5rem;
     }
     /* 8Ball styling */
     .options-container {
@@ -149,7 +140,6 @@ table, td {
     #options-text {
         height: 100px;
         width: 100px;
-        
     }
     /* Table styling */
     table, td {
@@ -172,6 +162,9 @@ table, td {
 
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding-bottom: 5rem;
+    }
     /* form styling */
     #form {
         margin-top: 2rem;
@@ -181,24 +174,6 @@ table, td {
         width: 100vw;
         background-color: rgba(255,255,255,0.8);
         font-size: 1.5rem;
-    }
-    #message-label {
-        background-color: rgba(255,255,255,0.8);
-        margin-bottom: 1rem;
-        border-radius: 1rem;
-        font-size: 2rem;
-        width: 60vw;
-        align-self: center;
-    }
-    #message {
-        width: 80vw;
-        height: 5vh;
-    }
-    #submit-button {
-        height: 5vh;
-        width: 60vw;
-        align-self: center;
-        margin-top: 1rem;
     }
     .options-container {
         margin-bottom: 2rem;
@@ -215,24 +190,7 @@ table, td {
     }
 }
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    #message-label {
-        background-color: rgba(255,255,255,0.8);
-        margin-bottom: 1rem;
-        border-radius: 1rem;
-        font-size: 2rem;
-        width: 60vw;
-        align-self: center;
-    }
-    #message {
-        width: 80vw;
-        height: 5vh;
-    }
-    #submit-button {
-        height: 5vh;
-        width: 60vw;
-        align-self: center;
-        margin-top: 1rem;
-    }
+    
     /* table styling */
     table {
         width: 80vw;
@@ -242,24 +200,7 @@ table, td {
     }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-    #message-label {
-        background-color: rgba(255,255,255,0.8);
-        margin-bottom: 1rem;
-        border-radius: 1rem;
-        font-size: 2rem;
-        width: 60vw;
-        align-self: center;
-    }
-    #message {
-        width: 80vw;
-        height: 5vh;
-    }
-    #submit-button {
-        height: 5vh;
-        width: 60vw;
-        align-self: center;
-        margin-top: 1rem;
-    }
+    
     /* table styling */
     table {
         width: 80vw;
@@ -279,55 +220,39 @@ table, td {
     #form {
         margin-top: 6rem;
     }
-    #message-label {
-        background-color: rgba(255,255,255,0.8);
-        margin-bottom: 1rem;
-        border-radius: 1rem;
-        font-size: 2rem;
-        /* height: 5vh; */
-        width: 60vw;
-        align-self: center;
-    }
     #message {
-        width: 80vw;
-        height: 5vh;
         font-size: 2rem;
     }
     #submit-button {
-        /* height: 2.5vh; */
         font-size: 2rem;
-        width: 60vw;
-        align-self: center;
-        margin-top: 1rem;
         border-radius: 1rem;
     }
 
     /* 8Ball styling */
     /* options container */
-.options-container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: black;
-    height: 500px; /*300px*/
-    width: 500px; /*300px*/
-    border-radius: 50%;
-}
-#options-text {
-    background-color: white;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 2rem;
-}
-    
+    .options-container {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: black;
+        height: 500px; /*300px*/
+        width: 500px; /*300px*/
+        border-radius: 50%;
+    }
+    #options-text {
+        background-color: white;
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 2rem;
+    }
     /* table styling */
     table {
         width: 80vw;
