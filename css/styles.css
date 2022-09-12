@@ -10,7 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
 }
 /* header  */
 header {
@@ -29,6 +29,7 @@ header {
     margin-top: 0;
     font-size: 1.25rem;
     text-shadow: 0 0 10px #fff;
+    text-align: center;
 }
 /* main */
 main {
@@ -65,8 +66,8 @@ main {
     justify-content: center;
     flex-direction: column;
     background-color: black;
-    height: 300px;
-    width: 300px;
+    height: 18.75rem; /*300px*/
+    width: 18.75rem; /*300px*/
     border-radius: 50%;
 }
 #options-text {
@@ -88,4 +89,60 @@ main {
 .table-row-heading {
     font-size: 2rem;
     color: white;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 480px) {
+    /* body {
+        padding-bottom: 10rem;
+    } */
+    
+    .title-description {
+        background-color: rgba(255,255,255,0.8);
+        font-size: 1.5rem;
+    }
+    #message-label {
+        background-color: rgba(255,255,255,0.8);
+        text-align: center;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+    }
+    #message {
+        width: 80vw;
+        height: 5vh;
+    }
+    #submit-button {
+        height: 5vh;
+        width: 60vw;
+        align-self: center;
+        margin-top: 1rem;
+    }
+    /* 8Ball styling */
+    .options-container {
+        height: 150px;
+        width: 150px;
+    }
+    #options-text {
+        height: 75px;
+        width: 75px;
+    }
+    /* Table styling */
+    table, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+    }
+    table {
+        width: 80vw;
+    }
+    .table-heading {
+        font-weight: bold;
+    }
+    .results-table-container {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .table-row-data {
+        color: white;
+    }
+
 }
