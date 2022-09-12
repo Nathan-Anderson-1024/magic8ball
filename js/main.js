@@ -43,7 +43,7 @@ const getUserQuestion = () => {
     };
     async function spinBall() {
         const insideBall = document.getElementById('options-text');
-        let x = 200
+        let x = 1
         for (const answer of answerArray) {
             await sleep(x);
             insideBall.innerHTML = answer;
@@ -59,11 +59,9 @@ const getUserQuestion = () => {
         inputMemory.push(userInput);
         spinBall().then((result) => {
             returnAnswer();
-            showTable();
             moveTable();
             
         })
-        //returnAnswer()
     }
     else if (!userInput.includes('will')) {
         console.log(userInput)
@@ -82,8 +80,6 @@ const getUserQuestion = () => {
 const showTable = () => {
     const userQuestion = document.getElementsByClassName('table-data-question')[0]
     const userAnswer = document.getElementsByClassName('table-data-response')[0]
-    //const userQuestion = testQuestion[0];
-    //const userAnswer = testResponse[0];
     const userInput = document.getElementById("message").value.toLowerCase()
     const userInputIndex = inputMemory.findIndex(element => element === userInput)
     const answerMemoryIndex = answerMemory[userInputIndex];
@@ -94,42 +90,37 @@ const showTable = () => {
 const createTableRow = () => {
     const tr = document.createElement('tr'); //create table row html element
     tr.classList.add('table-row-data'); //add class of table-row-data to table row
-    // td.setAttribute('id', 'ball-answer');
     const table = document.getElementById('table');
     const row = table.insertRow(-1);
     row.classList.add('table-row-data')
-    //table.appendChild(tr);
 }
 
-
-const createUserTd = (data) => {
+//adds td to last row in table
+const createUserTd = () => {
     const td = document.createElement('td');
     td.classList.add('table-data','table-data-response');
-    //td.setAttribute('id', 'user-question');
     const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
     const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
-    td.innerHTML = data;
     latestTableRow.appendChild(td);
 }
 
-    
-const createQuestionTd = (data) => {
+//adds td to last row in table    
+const createQuestionTd = () => {
     const td = document.createElement('td');
     td.classList.add('table-data', 'table-data-question');
     const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
     const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
-    td.innerHTML = data;
     latestTableRow.appendChild(td);
 }
 
-let previousValue = 0
 const moveTable = () => {
-    if (answerMemory.length >= 2 && inputMemory.length >= 2) {
-        const previousQuestion = inputMemory[previousValue];
-        const previousAnswer = answerMemory[previousValue];
-        createTableRow();
-        createUserTd(previousQuestion);
-        createQuestionTd(previousAnswer);
-        previousValue += 1;
+    createTableRow(); //creates new row at the end of the table
+    createQuestionTd(); //sets last elements html to the second to last value in the array
+    createUserTd(); //sets last elements html to the second to last value in the array
+    for (let i = 0; i < answerMemory.length; i++) {
+        const iterateQuestion = document.getElementsByClassName('table-data-question')[i]
+        iterateQuestion.innerHTML = inputMemory[i]
+        const iterateResponse = document.getElementsByClassName('table-data-response')[i]
+        iterateResponse.innerHTML = answerMemory[i]
     }
 }
