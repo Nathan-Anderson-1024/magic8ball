@@ -4,6 +4,14 @@ html, body {
     box-sizing: border-box;
     font-size: 16px;
 }
+/* Body */
+body {
+    background-image: url("./images/sigmund-L8mclmMuWjg-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 /* header  */
 header {
     display: flex;
@@ -13,10 +21,14 @@ header {
 .title {
     font-size: 2rem;
     padding: 0;
+    text-shadow: 0 0 8px #fff;
+    width: 100vw;
+    text-align: center;
 }
 .title-description {
     margin-top: 0;
     font-size: 1.25rem;
+    text-shadow: 0 0 10px #fff;
 }
 /* main */
 main {
@@ -39,4 +51,41 @@ main {
     border: 2px solid green;
     margin-top: 0.5rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+}
+#message-label {
+    text-shadow: 0 0 8px #fff;
+}
+
+/* options container */
+.options-container {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+#options-text {
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Table styling */
+.results-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.table-row-heading {
+    font-size: 2rem;
+    color: white;
 }
