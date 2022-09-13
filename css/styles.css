@@ -23,15 +23,6 @@ header {
     text-shadow: 0 0 8px #fff;
     text-align: center;
 }
-.title-description {
-    margin-top: 0;
-    /* text-shadow: 0 0 10px #fff; */
-    text-align: center;
-    background-color: rgba(255,255,255,0.8);
-    font-size: 1.5rem;
-    
-    width: 100%;
-}
 /* main */
 main {
     margin-top: 1rem;
@@ -178,11 +169,6 @@ table, td {
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
-    .title-description {
-        width: 100vw;
-        background-color: rgba(255,255,255,0.8);
-        font-size: 1.5rem;
-    }
     .options-container {
         margin-bottom: 2rem;
     }
@@ -229,9 +215,6 @@ table, td {
     .title {
         font-size: 3rem;
     }
-    .title-description {
-        font-size: 2rem;
-    }
     /* form styling */
     #form {
         margin-top: 6rem;
@@ -245,7 +228,6 @@ table, td {
     }
 
     /* 8Ball styling */
-    /* options container */
     .options-container {
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -254,8 +236,8 @@ table, td {
         justify-content: center;
         flex-direction: column;
         background-color: black;
-        height: 500px; /*300px*/
-        width: 500px; /*300px*/
+        height: 500px;
+        width: 500px; 
         border-radius: 50%;
     }
     #options-text {
