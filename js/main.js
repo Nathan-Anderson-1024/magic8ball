@@ -10,10 +10,10 @@ const answerArray = [
     'No chance.',
     'My sources say yes!',
     'Without a doubt yes!',
-    'hazy, but I say it will happen',
-    "you will",
-    'concentrate and ask again',
-    'no way'
+    'Hazy, but I say it will happen',
+    "You will",
+    'Concentrate and ask again',
+    'No way'
 ];
 
 let randomNum; //defines global variable randomNum
