@@ -16,7 +16,7 @@ const answerArray = [
     "You will",
     'Concentrate and ask again',
     'No way'
-];
+]
 
 let randomNum; //defines global variable randomNum
 
@@ -32,7 +32,7 @@ const randomNumberGenerator = () => {
 const returnAnswer = () => {
     answerMemory.push(answerArray[randomNum]);
     return alert(answerArray[randomNum]);
-};
+}
 
 async function spinBall() {
     const insideBall = document.getElementById('options-text');
@@ -49,7 +49,7 @@ async function spinBall() {
 const getUserQuestion = () => {
     const userInput = document.getElementById("message").value.toLowerCase(); //captures user question
     if (userInput === '' || userInput.length < 5) {
-        return alert('Please ask a valid question.')
+        return alert('Please ask a valid question.');
     }
     //if question hasnt been asked then return an answer and push the question into memory.
     else if (inputMemory.includes(userInput) === false && userInput.includes('will')) {
@@ -62,18 +62,17 @@ const getUserQuestion = () => {
         })
     }
     else if (!userInput.includes('will')) {
-        console.log(userInput)
-        return alert("Please start your question with 'Will'.")
+        return alert("Please start your question with 'Will'.");
     }
     // if question has been asked then return the question and the answer that was given at the time.
     else {
-        const userInputIndex = inputMemory.findIndex(element => element === userInput)
+        const userInputIndex = inputMemory.findIndex(element => element === userInput);
         const answerMemoryIndex = answerMemory[userInputIndex];
         const insideBall = document.getElementById('options-text');
         insideBall.innerHTML = answerMemoryIndex;
-        return alert(`You already asked me '${userInput}', my answer is still '${answerMemoryIndex}'.`)
+        return alert(`You already asked me '${userInput}', my answer is still '${answerMemoryIndex}'.`);
     }
 }
 
-const submitBtn = document.getElementById('submit-button')
-submitBtn.addEventListener('click', getUserQuestion)
+const submitBtn = document.getElementById('submit-button');
+submitBtn.addEventListener('click', getUserQuestion);
