@@ -1,5 +1,7 @@
-const inputMemory = []; //array for remembering the user questions
-const answerMemory = []; //array for remembering the 8ball answers
+import { showTable, createTableRow, createUserTd, createQuestionTd, moveTable, inputMemory, answerMemory } from "../js/createTable.js";
+import { stopReload } from "./stopReload.js";
+import { sleep } from "./sleep.js";
+
 // Answers the 8ball can give
 const answerArray = [
     'Definitely.',
@@ -19,16 +21,7 @@ const answerArray = [
 let randomNum; //defines global variable randomNum
 
 const noSubmitForm = document.getElementById("form");
-// Stops reload of the page after submitting
-const stopReload = (event) => {
-    return event.preventDefault();
-}
 noSubmitForm.addEventListener('submit', stopReload);
-
-// sleep function to wait
-const sleep = (milliseconds) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
 
 
 const randomNumberGenerator = () => {
@@ -81,51 +74,6 @@ const getUserQuestion = () => {
         return alert(`You already asked me '${userInput}', my answer is still '${answerMemoryIndex}'.`)
     }
 }
-//appends question and answer to table to the top row
-const showTable = () => {
-    const userQuestion = document.getElementsByClassName('table-data-question')[0]
-    const userAnswer = document.getElementsByClassName('table-data-response')[0]
-    const userInput = document.getElementById("message").value.toLowerCase()
-    const userInputIndex = inputMemory.findIndex(element => element === userInput)
-    const answerMemoryIndex = answerMemory[userInputIndex];
-    userQuestion.innerHTML = userInput; 
-    userAnswer.innerHTML = answerMemoryIndex;
-}
-// creates a new table row with associated td elements to be appended to index.html table
-const createTableRow = () => {
-    const tr = document.createElement('tr'); //create table row html element
-    tr.classList.add('table-row-data'); //add class of table-row-data to table row
-    const table = document.getElementById('table');
-    const row = table.insertRow(-1);
-    row.classList.add('table-row-data')
-}
 
-//adds td to last row in table
-const createUserTd = () => {
-    const td = document.createElement('td');
-    td.classList.add('table-data','table-data-response');
-    const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
-    const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
-    latestTableRow.appendChild(td);
-}
-
-//adds td to last row in table    
-const createQuestionTd = () => {
-    const td = document.createElement('td');
-    td.classList.add('table-data', 'table-data-question');
-    const lastTrElement = document.getElementsByClassName('table-row-data').length - 1;
-    const latestTableRow = document.getElementsByClassName('table-row-data')[lastTrElement]; //get last element in class array
-    latestTableRow.appendChild(td);
-}
-
-const moveTable = () => {
-    createTableRow(); //creates new row at the end of the table
-    createQuestionTd(); //sets last elements html to the second to last value in the array
-    createUserTd(); //sets last elements html to the second to last value in the array
-    for (let i = 0; i < answerMemory.length; i++) {
-        const iterateQuestion = document.getElementsByClassName('table-data-question')[i]
-        iterateQuestion.innerHTML = inputMemory[i]
-        const iterateResponse = document.getElementsByClassName('table-data-response')[i]
-        iterateResponse.innerHTML = answerMemory[i]
-    }
-}
+const submitBtn = document.getElementById('submit-button')
+submitBtn.addEventListener('click', getUserQuestion)
