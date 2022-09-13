@@ -10,7 +10,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 100vh; */
 }
 /* header  */
 header {
@@ -78,7 +77,11 @@ main {
     border-radius: 1rem;
     font-size: 2rem;
     width: 60vw;
+    height: 5vh;
     align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* options container */
 .options-container {
@@ -132,7 +135,10 @@ table, td {
 
 @media only screen and (min-width: 300px) and (max-width: 480px) {
     body {
-        padding-bottom: 5rem;
+        padding-bottom: 10rem;
+    }
+    #message-label {
+        font-size: 1.5rem;
     }
     /* 8Ball styling */
     .options-container {
@@ -165,7 +171,7 @@ table, td {
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     body {
-        padding-bottom: 5rem;
+        padding-bottom: 10rem;
     }
     /* form styling */
     #form {
@@ -192,7 +198,7 @@ table, td {
     }
 }
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    
+
     /* table styling */
     table {
         width: 80vw;
@@ -201,8 +207,16 @@ table, td {
         font-size: 1.5rem;
     }
 }
+/* Long devices */
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (min-height: 1100px) and (max-height: 1600px) {
+    body {
+        padding-bottom: 27rem;
+    }
+}
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-    
+    body {
+        padding-bottom: 3rem;
+    }
     /* table styling */
     table {
         width: 80vw;
