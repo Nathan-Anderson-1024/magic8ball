@@ -71,7 +71,8 @@ const getUserQuestion = () => {
         const answerMemoryIndex = answerMemory[userInputIndex];
         const insideBall = document.getElementById('options-text');
         insideBall.innerHTML = answerMemoryIndex;
-        return alert(`You already asked me '${userInput}', my answer is still '${answerMemoryIndex}'.`);
+        alert(`You already asked me '${userInput}', my answer is still '${answerMemoryIndex}'.`);
+        document.getElementById("message").value = '';
     }
 }
 
