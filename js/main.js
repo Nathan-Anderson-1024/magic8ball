@@ -1,4 +1,4 @@
-import { showTable, createTableRow, createUserTd, createQuestionTd, moveTable, inputMemory, answerMemory } from "../js/createTable.js";
+import { moveTable, inputMemory, answerMemory } from "../js/createTable.js";
 import { stopReload } from "./stopReload.js";
 import { sleep } from "./sleep.js";
 
