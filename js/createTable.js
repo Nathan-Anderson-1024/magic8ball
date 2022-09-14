@@ -11,6 +11,7 @@ export const showTable = () => {
     const answerMemoryIndex = answerMemory[userInputIndex];
     userQuestion.innerHTML = userInput; 
     userAnswer.innerHTML = answerMemoryIndex;
+    document.getElementById("message").value = '';
 }
 // creates a new table row with associated td elements to be appended to index.html table
 export const createTableRow = () => {

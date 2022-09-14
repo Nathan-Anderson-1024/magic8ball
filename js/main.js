@@ -31,7 +31,8 @@ const randomNumberGenerator = () => {
 
 const returnAnswer = () => {
     answerMemory.push(answerArray[randomNum]);
-    return alert(answerArray[randomNum]);
+    alert(answerArray[randomNum]);
+    document.getElementById("message").value = '';
 }
 
 async function spinBall() {
