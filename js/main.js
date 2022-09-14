@@ -63,7 +63,6 @@ async function spinBall(array) {
 // Capture user question and check if its already been asked before.
 const getUserQuestion = () => {
     const userInput = document.getElementById("message").value.toLowerCase(); //captures user question
-    console.log(userInput.substring(0,4))
     if (userInput === '' || userInput.length < 5) {
         return alert('Please ask a valid question.');
     }
