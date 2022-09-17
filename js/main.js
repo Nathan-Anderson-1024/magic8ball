@@ -1,6 +1,8 @@
 import { moveTable, inputMemory, answerMemory } from "../js/createTable.js";
 import { stopReload } from "./stopReload.js";
 import { sleep } from "./sleep.js";
+
+
 //WHO answers the 8ball can give
 const whoAnswers = [
 'Robert Downey Jr.', 'Emma Stone', 'SpongeBob SquarePants', 
