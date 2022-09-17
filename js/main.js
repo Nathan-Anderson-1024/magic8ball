@@ -2,18 +2,24 @@ import { moveTable, inputMemory, answerMemory } from "../js/createTable.js";
 import { stopReload } from "./stopReload.js";
 import { sleep } from "./sleep.js";
 //WHO answers the 8ball can give
-const whoAnswers = ['Robert Downey Jr.', 'Emma Stone', 'SpongeBob SquarePants', 'Sandra Bullock', 'Brad Pitt', 'Natalie Portman',
+const whoAnswers = [
+'Robert Downey Jr.', 'Emma Stone', 'SpongeBob SquarePants', 
+'Sandra Bullock', 'Brad Pitt', 'Natalie Portman',
 'Leonardo DiCaprio', 'Scarlett Johansson', 'Patrick Star'];
 
 // WHEN answers the 8ball can give
-const whenAnswers = ['Tomorrow', 'In two days', 'In a week', 'In a month', 'In five years', 'Never', 'In one year', 'In 3 months', 'In six months',
+const whenAnswers = ['Tomorrow', 'In two days', 'In a week', 
+'In a month', 'In five years', 'Never',
+'In one year', 'In 3 months', 'In six months',
 'In five days'];
 
 //WHY answers the 8ball can give
-const whyAnswers = ['Whynot', 'Because I said so', 'No one knows', 'To keep things interesting', 'Because of a bet'];
+const whyAnswers = ['Whynot', 'Because I said so', 'No one knows', 
+'To keep things interesting', 'Because of a bet'];
 
 //WHERE answers the 8ball can give
-const whereAnswers = ['The Bahamas', 'Disneyland', 'Disney World', 'Fresno, CA', 'Antartica', 'The North Pole', 'The South Pole', 
+const whereAnswers = ['The Bahamas', 'Disneyland', 'Disney World', 'Fresno, CA', 
+'Antartica', 'The North Pole', 'The South Pole', 
 'The East Coast', 'The West Coast', 'At the mall'];
 
 // Answers the 8ball can give
