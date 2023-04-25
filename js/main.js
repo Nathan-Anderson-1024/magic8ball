@@ -53,7 +53,7 @@ export const randomNumberGenerator = (array) => {
 
 const returnAnswer = (array) => {
     answerMemory.push(array[randomNum]);
-    alert(array[randomNum]);
+    // alert(array[randomNum]);
     document.getElementById("message").value = '';
 }
 
@@ -118,6 +118,14 @@ const getUserQuestion = () => {
             returnAnswer(answerArray);
             moveTable();
             
+        })
+    }
+    else if (!inputMemory.includes(userInput)) {
+        inputMemory.push(userInput);
+        randomNumberGenerator(answerArray);
+        spinBall(answerArray).then(() => {
+        returnAnswer(answerArray);
+        moveTable();
         })
     }
     
